@@ -1,3 +1,9 @@
+## 0.1.1
+
+- Fixed: "Vertical viewport was given unbounded height" error in preview mode
+- Improved: Decoupled editor and preview scroll views
+- Enabled `shrinkWrap` on `LexicalParser` for use inside scrollable forms
+
 ## 0.1.0
 
 - Initial release

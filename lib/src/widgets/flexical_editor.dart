@@ -313,16 +313,15 @@ class _FlexicalEditorState extends State<FlexicalEditor> {
                 minHeight: widget.minHeight,
                 maxHeight: widget.maxHeight ?? double.infinity,
               ),
-              child: SingleChildScrollView(
-                padding:
-                    widget.padding ??
-                    _theme.editorPadding ??
-                    const EdgeInsets.all(16),
-                child:
-                    (_isPreview || widget.controller.readOnly)
-                        ? _buildPreview()
-                        : _buildContent(),
-              ),
+              child: (_isPreview || widget.controller.readOnly)
+                  ? _buildPreview()
+                  : SingleChildScrollView(
+                      padding:
+                          widget.padding ??
+                          _theme.editorPadding ??
+                          const EdgeInsets.all(16),
+                      child: _buildContent(),
+                    ),
             ),
           ),
         ],
@@ -331,7 +330,14 @@ class _FlexicalEditorState extends State<FlexicalEditor> {
   }
 
   Widget _buildPreview() {
-    return LexicalParser(sourceMap: widget.controller.toJson());
+    return Padding(
+      padding:
+          widget.padding ?? _theme.editorPadding ?? const EdgeInsets.all(16),
+      child: LexicalParser(
+        sourceMap: widget.controller.toJson(),
+        shrinkWrap: true,
+      ),
+    );
   }
 
   Widget _buildContent() {
