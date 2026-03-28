@@ -1,9 +1,9 @@
 name: flexical
 description: A native Flutter rich text editor that outputs Lexical JSON format. Edit rich text in Flutter, get cross-platform compatible Lexical JSON.
 version: 0.1.0
-homepage: https://github.com/flexical/flexical
-repository: https://github.com/flexical/flexical
-issue_tracker: https://github.com/flexical/flexical/issues
+homepage: https://github.com/daveragos/flexical
+repository: https://github.com/daveragos/flexical
+issue_tracker: https://github.com/daveragos/flexical/issues
 topics:
   - rich-text-editor
   - lexical
